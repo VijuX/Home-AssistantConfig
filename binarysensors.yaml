@@ -1,0 +1,24 @@
+- platform: mqtt
+  name: "staircase motion"
+  state_topic: "smartthings/Sylvania Motion Sensor/motion"
+  payload_on: "active"
+  payload_off: "inactive"
+
+    
+- platform: mqtt
+  name: "upstairs corridor sensor"
+  state_topic: "smartthings/Upstairs Corridor Sensor/motion"
+  payload_on: "active"
+  payload_off: "inactive"
+
+- platform: mqtt
+  name: "main gate"
+  state_topic: "smartthings/Main Gate/contact"
+  payload_on: "open"
+  payload_off: "closed"
+
+- platform: mqtt
+  name: "doorbell"
+  state_topic: "dash/doorbell"
+  payload_on: "active"
+  payload_off: "inactive"

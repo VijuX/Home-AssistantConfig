@@ -1,0 +1,42 @@
+####################################################
+#                                                  #
+#                   Switches                       #
+#                                                  #
+####################################################
+
+
+
+####################################################
+#                                                  #
+#                   Test zone                      #
+#                                                  #
+####################################################
+
+
+# - platform: mqtt
+#   name: "Master Bedroom Light 1"
+#   state_topic: "smartthings/Master Bedroom light 1/switch"
+#   command_topic: "smartthings/Master Bedroom light 1/switch"
+#   brightness_state_topic: "smartthings/Master Bedroom light 1/level"
+#   brightness_command_topic: "smartthings/Master Bedroom light 1/level"
+#   brightness_scale: 101
+#   payload_on: "on"
+#   payload_off: "off"
+#   retain: true
+
+
+#- platform: mqtt
+#  name: "Centralite button 1"
+#  state_topic: "smartthings/Centralite Zigbee Smart Switch"
+#  command_topic: "smartthings/Centralite Zigbee Smart Switch"
+#  payload_on: "button 1 pushed"
+#  payload_off: ""
+  
+#- platform: mqtt
+#  name: "Centralite button 2"
+#  state_topic: "smartthings/Centralite Zigbee Smart Switch"
+#  command_topic: "smartthings/Centralite Zigbee Smart Switch"
+#  payload_on: "button 2 pushed"
+#  payload_off: ""
+  
+ 

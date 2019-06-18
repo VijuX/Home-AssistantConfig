@@ -1,0 +1,73 @@
+title: My Lovely Home Automation
+views:
+  - title: Home
+    cards:
+      - type: media-control
+        entity: media_player.spotify
+
+      - type: entities
+        title: Automations
+        show_header_toggle: true
+        entities:
+          - automation.morning_alexa_volume
+          - automation.night_alexa_volume
+          - automation.nightwalk
+          - automation.upstairs_bathroom_anouncer
+
+    #   - type: entities
+    #     title: Groups
+    #     show_header_toggle: true
+    #     entities:
+    #       - group.all_automations
+        #   - group.all_lights
+
+      - type: entities
+        title: Lights
+        show_header_toggle: true
+        entities:
+          - light.front_door_light
+#          - light.garage_left_bay
+          - light.garage_lights
+#          - light.garage_right_bay
+#          - light.guest_room_light_1
+#          - light.guest_room_light_2
+          - light.guest_room_lights
+          - light.indoor_staircase_light
+#          - light.kitchen_light_1
+#          - light.kitchen_light_2
+          - light.kitchen_lights
+#          - light.living_room_light_1
+#          - light.living_room_light_2
+          - light.living_room_lights
+          - light.master_bedroom_light_3
+          - light.master_bedroom_lights_1
+          - light.master_bedroom_lights_2
+          - light.terrace_light
+          - light.upstairs_bathroom
+
+      - type: entities
+        title: Scenes
+        show_header_toggle: true
+        entities:
+          - scene.kitchen_dim
+          - scene.kitchen_normal
+
+      - type: entities
+        title: Sensors
+        show_header_toggle: true
+        entities:
+          - sensor.anushagarage_events_last_hour
+          - sensor.anushagarage_status
+          - sensor.devianeegarage_events_last_hour
+          - sensor.devianeegarage_status
+          - sensor.main_events_last_hour
+          - sensor.main_gate
+          - sensor.main_status
+          - sensor.staircase_motion
+          - sensor.upstairs_corridor_sensor
+
+      - type: entities
+        title: Sun
+        show_header_toggle: true
+        entities:
+          - sun.sun

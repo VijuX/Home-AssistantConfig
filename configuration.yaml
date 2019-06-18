@@ -1,0 +1,166 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: -20.2351409
+  longitude: 57.4593328
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 0
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Indian/Mauritius
+  # Customization file
+  customize: !include customize.yaml
+
+# Show links to resources in log and frontend
+#introduction:
+
+# Enables the frontend
+frontend:
+  themes: !include themes.yaml
+
+# Enables configuration UI
+config:
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+# http:
+#   base_url: example.duckdns.org:8123
+
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  # include_used_components: true
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time
+history:
+
+# View all events in a logbook
+logbook:
+
+# Enables a map showing the location of tracked devices
+map:
+
+# Track the sun
+sun:
+
+# Weather prediction
+# sensor:
+  # - platform: yr
+
+# Text to speech
+#tts:
+#  - platform: google
+
+# MQTT
+mqtt:
+  broker: 127.0.0.1
+  port: 1883
+  keepalive: 60
+  discovery: true
+  discovery_prefix: smartthings
+
+# My devices
+
+
+# My Device files
+light: !include lights.yaml
+
+
+media_player:
+# Alexa
+#  - platform: alexa
+#    email: !secret amazon_userid
+#    password: !secret amazon_password
+#    url: amazon.com
+
+# Spotify
+#  - platform: spotify
+#    name: "Spotify"
+#    client_id: !secret spotify_clientid
+#    client_secret: !secret spotify_secret
+# Samsung SmartTV
+  - platform: samsungtv
+    host: 192.168.100.12
+    port: 8001
+    scan_interval: 10
+    name: "Living room TV"
+    mac: !secret samsungtv_mac
+    
+# Zoneminder
+#zoneminder:
+#  host: 127.0.0.1:9090
+
+# Alexa
+alexa_media:
+  accounts:
+  - email: !secret amazon_userid
+    password: !secret amazon_password
+    url: amazon.com
+
+    
+device_tracker:
+  - platform: nmap_tracker
+    hosts: 192.168.100.1/24
+    interval_seconds: 30
+    consider_home: 0:10:00
+    scan_options: " --privileged -sP "
+  - platform: gpslogger
+
+# Telegram BOT
+telegram_bot:
+  - platform: polling
+    api_key: !secret afonexHassBot_api
+    allowed_chat_ids:
+      - 119666388
+      - "-364277323"
+
+
+# Notifications
+notify:
+  - name: afonexHassBot
+    platform: telegram
+    chat_id: "-364277323"
+  - name: telegram_vijay
+    platform: telegram
+    chat_id: 119666388
+
+
+# Zones
+zone:
+ - name: Work
+   latitude: -20.242389799999998
+   longitude: 57.487865196546636
+   radius: 200
+   icon: mdi:work
+  
+
+# Virtual switches
+input_boolean:
+  presence_upstairs:
+   name: "presence_upstairs" 
+   initial: "off"
+   icon: mdi:car
+
+system_health:
+
+# Sliders
+input_number: !include input_numbers.yaml
+
+sensor: !include sensors.yaml
+binary_sensor: !include binarysensors.yaml
+scene: !include scenes.yaml
+switch: !include switches.yaml
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml

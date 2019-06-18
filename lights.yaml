@@ -1,0 +1,277 @@
+# All configuration for switches
+
+##################################################################################
+# Second floor switches
+##################################################################################
+
+- platform: mqtt
+  name: "Master Bedroom Light 1"
+  state_topic: "smartthings/Master Bedroom light 1/switch"
+  command_topic: "smartthings/Master Bedroom light 1/switch"
+  brightness_state_topic: "smartthings/Master Bedroom light 1/level"
+  brightness_command_topic: "smartthings/Master Bedroom light 1/level"
+  brightness_scale: 101
+  payload_on: "on"
+  payload_off: "off"
+  retain: true
+
+
+- platform: mqtt
+  name: "Master Bedroom Light 2"
+  state_topic: "smartthings/Master Bedroom light 2/switch"
+  command_topic: "smartthings/Master Bedroom light 2/switch"
+  brightness_state_topic: "smartthings/Master Bedroom light 2/level"
+  brightness_command_topic: "smartthings/Master Bedroom light 2/level"
+  brightness_scale: 101  
+  payload_on: "on"
+  payload_off: "off"
+  retain: true
+
+
+- platform: mqtt
+  name: "Master Bedroom Light 3"
+  state_topic: "smartthings/Master Bedroom light 3/switch"
+  command_topic: "smartthings/Master Bedroom light 3/switch"
+  brightness_state_topic: "smartthings/Master Bedroom light 3/level"
+  brightness_command_topic: "smartthings/Master Bedroom light 3/level"
+  brightness_scale: 101  
+  payload_on: "on"
+  payload_off: "off"
+  retain: true
+
+
+- platform: mqtt
+  name: "Guest room light 1"
+  state_topic: "smartthings/Guest room light 1/switch"
+  command_topic: "smartthings/Guest room light 1/switch"
+  brightness_state_topic: "smartthings/Guest room light 1/level"
+  brightness_command_topic: "smartthings/Guest room light 1/level"
+  brightness_scale: 101  
+  payload_on: "on"
+  payload_off: "off"
+  retain: true
+
+
+- platform: mqtt
+  name: "Guest room light 2"
+  state_topic: "smartthings/Guest room light 2/switch"
+  command_topic: "smartthings/Guest room light 2/switch"
+  brightness_state_topic: "smartthings/Guest room light 2/level"
+  brightness_command_topic: "smartthings/Guest room light 2/level"
+  brightness_scale: 101  
+  payload_on: "on"
+  payload_off: "off"
+  retain: true
+
+
+- platform: mqtt
+  name: "Upstairs bathroom"
+  state_topic: "smartthings/Upstairs bathroom/switch"
+  command_topic: "smartthings/Upstairs bathroom/switch"
+  brightness_state_topic: "smartthings/Upstairs bathroom/level"
+  brightness_command_topic: "smartthings/Upstairs bathroom/level"
+  brightness_scale: 101  
+  payload_on: "on"
+  payload_off: "off"
+  retain: true
+  
+
+- platform: mqtt
+  name: "Indoor staircase light"
+  state_topic: "smartthings/indoor Staircase light/switch"
+  command_topic: "smartthings/indoor Staircase light/switch"
+  brightness_state_topic: "smartthings/indoor Staircase light/level"
+  brightness_command_topic: "smartthings/indoor Staircase light/level"
+  brightness_scale: 101  
+  payload_on: "on"
+  payload_off: "off"
+  retain: true
+
+
+
+##########################################################################################################
+# First floor lights
+##########################################################################################################
+
+
+- platform: mqtt
+  name: "Living room light 1"
+  state_topic: "smartthings/Living room light 1/switch"
+  command_topic: "smartthings/Living room light 1/switch"
+  brightness_state_topic: "smartthings/Living room light 1/level"
+  brightness_command_topic: "smartthings/Living room light 1/level"
+  brightness_scale: 101  
+  payload_on: "on"
+  payload_off: "off"
+  retain: true
+
+
+
+- platform: mqtt
+  name: "Living room light 2"
+  state_topic: "smartthings/Living room light 2/switch"
+  command_topic: "smartthings/Living room light 2/switch"
+  brightness_state_topic: "smartthings/Living room light 2/level"
+  brightness_command_topic: "smartthings/Living room light 2/level"
+  brightness_scale: 101  
+  payload_on: "on"
+  payload_off: "off"
+  retain: true
+
+
+- platform: mqtt
+  name: "Kitchen light 1"
+  state_topic: "smartthings/Kitchen light 1/switch"
+  command_topic: "smartthings/Kitchen light 1/switch"
+  brightness_state_topic: "smartthings/Kitchen light 1/level"
+  brightness_command_topic: "smartthings/Kitchen light 1/level"
+  brightness_scale: 101
+  payload_off: "off"
+  retain: true
+  payload_on: "on"
+
+
+- platform: mqtt
+  name: "Kitchen light 2"
+  state_topic: "smartthings/Kitchen light 2/switch"
+  command_topic: "smartthings/Kitchen light 2/switch"
+  brightness_state_topic: "smartthings/Kitchen light 2/level"
+  brightness_command_topic: "smartthings/Kitchen light 2/level"
+  brightness_scale: 101  
+  payload_on: "on"
+  payload_off: "off"
+  retain: true
+
+- platform: mqtt
+  name: "Bathroom downstairs"
+  state_topic: "smartthings/Bathroom downstairs/switch"
+  command_topic: "smartthings/Bathroom downstairs/switch"
+  brightness_state_topic: "smartthings/Bathroom downstairs/level"
+  brightness_command_topic: "smartthings/Bathroom downstairs/level"
+  brightness_scale: 101  
+  payload_on: "on"
+  payload_off: "off"
+  retain: true
+
+##########################################################################################################
+# Outdoor
+##########################################################################################################
+
+- platform: mqtt
+  name: "Garage left bay"
+  state_topic: "smartthings/Garage left bay light/switch"
+  command_topic: "smartthings/Garage left bay light/switch"
+  brightness_state_topic: "smartthings/Garage left bay light/level"
+  brightness_command_topic: "smartthings/Garage left bay light/level"
+  brightness_scale: 101  
+  payload_on: "on"
+  payload_off: "off"
+  retain: true
+  
+
+- platform: mqtt
+  name: "Garage right bay"
+  state_topic: "smartthings/Garage right bay light/switch"
+  command_topic: "smartthings/Garage right bay light/switch"
+  brightness_state_topic: "smartthings/Garage right bay light/level"
+  brightness_command_topic: "smartthings/Garage right bay light/level"
+  brightness_scale: 101  
+  payload_on: "on"
+  payload_off: "off"
+  retain: true
+  
+  
+
+- platform: mqtt
+  name: "Front door light"
+  state_topic: "smartthings/Front door light/switch"
+  command_topic: "smartthings/Front door light/switch"
+  brightness_state_topic: "smartthings/Front door light/level"
+  brightness_command_topic: "smartthings/Front door light/level"
+  brightness_scale: 101  
+  payload_on: "on"
+  payload_off: "off"
+  retain: true
+  
+
+- platform: mqtt
+  name: "Terrace light"
+  state_topic: "smartthings/Terrace light/switch"
+  command_topic: "smartthings/Terrace light/switch"
+  brightness_state_topic: "smartthings/Terrace light/level"
+  brightness_command_topic: "smartthings/Terrace light/level"
+  brightness_scale: 101  
+  payload_on: "on"
+  payload_off: "off"
+  retain: true
+  
+
+##########################################################################################################
+# Old house
+##########################################################################################################
+- platform: mqtt
+  name: "Bedroom light"
+  state_topic: "smartthings/Bedroom Lights/switch"
+  command_topic: "smartthings/Bedroom Lights/switch"
+  brightness_state_topic: "smartthings/Bedroom Lights/level"
+  brightness_command_topic: "smartthings/Bedroom Lights/level"
+  brightness_scale: 101  
+  payload_on: "on"
+  payload_off: "off"
+  retain: true
+  
+- platform: mqtt
+  name: "Upstairs Corridor Light"
+  state_topic: "smartthings/Upstairs Corridor Light/switch"
+  command_topic: "smartthings/Upstairs Corridor Light/switch"
+  brightness_state_topic: "smartthings/Upstairs Corridor Light/level"
+  brightness_command_topic: "smartthings/Upstairs Corridor Lights/level"
+  brightness_scale: 101  
+  payload_on: "on"
+  payload_off: "off"
+  retain: true
+
+
+
+##########################################################################################################
+# Light Groups
+##########################################################################################################
+
+
+- platform: group
+  name: "Living room Lights"
+  entities:
+    - light.Living_room_light_1
+    - light.Living_room_light_2
+
+- platform: group
+  name: "Kitchen Lights"
+  entities:
+    - light.Kitchen_light_1
+    - light.Kitchen_light_2
+    
+- platform: group
+  name: "Guest room lights"
+  entities:
+    - light.Guest_room_light_1
+    - light.Guest_room_light_2
+    
+- platform: group
+  name: "Garage lights"
+  entities:
+    - light.Garage_left_bay
+    - light.Garage_right_bay
+
+- platform: group
+  name: "outdoor lights"
+  entities:
+    - light.Garage_left_bay
+    - light.Garage_right_bay
+    - light.front_door_light
+    - light.terrace_light
+    
+- platform: group
+  name: "Old House"
+  entities:
+    - light.bedroom_light
+    - light.upstairs_corridor_light

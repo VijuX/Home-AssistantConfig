@@ -1,0 +1,39 @@
+device_tracker.24fd5b027215:
+  hidden: true
+device_tracker.4c1fccf6561e:
+  hidden: true
+device_tracker.fa2add8f1be1:
+  friendly_name: vijay-worklaptop-wifi
+  icon: mdi:laptop
+device_tracker.dcee06fe7947:
+  friendly_name: nexus6p_wifi
+  icon: mdi:cellphone-android
+device_tracker.98ded0c638aa:
+  friendly_name: AP-1
+  icon: mdi:wifi
+device_tracker.8416f98883ae:
+  friendly_name: AP-2
+  icon: mdi:wifi
+device_tracker.8416f98881a2:
+  friendly_name: AP-3
+  icon: mdi:wifi
+device_tracker.3c286d2b8c5e:
+  friendly_name: Pixel-3-wifi
+  icon: mdi:cellphone-android
+device_tracker.50dce7850919:
+  friendly_name: Echo-dot-1
+  icon: mdi:speaker
+device_tracker.6827376e895e:
+  friendly_name: samsung-tv
+  icon: mdi:airplay
+device_tracker.f00000039f72:
+  friendly_name: IP-CAM Garage
+device_tracker.pixel3:
+  icon: mdi:satellite
+device_tracker.nexus6p:
+  icon: mdi:satellite
+device_tracker.847beb43014c:
+  friendly_name: Worklaptop-WIFI-Anusha
+  icon: mdi:laptop
+device_tracker.b04e265f36d3:
+  friendly_name: TP-LINK-Switch

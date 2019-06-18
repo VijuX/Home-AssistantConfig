@@ -1,0 +1,123 @@
+### VIEWS ###
+simple_view:
+  view: yes
+  name: Simple
+  entities:
+  - group.outdoor
+  - group.garage
+  - group.old_house
+  - group.kitchen
+  - group.living_room
+  - group.guest_room
+  - group.master_bedroom
+  - group.bathroom
+
+living_room_view:
+  view: yes
+  name: Living Room
+  entities:
+  - group.living_room
+  - media_player.living_room_echo_dot
+  - media_player.living_room_tv
+  
+kitchen_view:
+  view: yes
+  name: Kitchen
+  entities:
+  - group.kitchen
+  - media_player.kitchen_echo_dot
+
+master_bedroom_view:
+  view: yes
+  name: Master Bedroom
+  entities:
+  - group.master_bedroom
+  - media_player.master_bedroom_echo_dot
+  
+garage_view:
+  view: yes
+  name: Garage
+  entities:
+  - group.garage
+ 
+outdoor_view:
+  view: yes
+  name: Outdoor
+  entities:
+  - group.outdoor
+  
+old_house_view:
+  view: yes
+  name: Old House
+  entities:
+  - group.old_house
+  
+
+  
+### GROUPS ###
+bathroom:
+ name: bathroom
+ entities:
+ - light.bathroom_downstairs
+ - light.upstairs_bathroom
+
+kitchen:
+  name: Kitchen
+  entities:
+  - light.Kitchen_light_1
+  - light.Kitchen_light_2
+    
+living_room:
+  name: Living Room
+  entities:
+  - light.Living_room_light_1
+  - light.Living_room_light_2
+
+guest_room:
+  name: Guest room
+  entities:
+  - light.guest_room_light_1
+  - light.guest_room_light_2
+
+master_bedroom:
+  name: Master Bedroom
+  entities:
+  - light.master_bedroom_light_1
+  - light.master_bedroom_light_2
+  - light.master_bedroom_light_3
+  
+garage:
+  name: Garage
+  entities:
+  - light.garage_right_bay
+  - light.garage_left_bay
+  
+outdoor:
+ name: Outdoor
+ entities:
+  - light.garage_right_bay
+  - light.garage_left_bay
+  - light.terrace_light
+  - light.front_door_light
+  
+environment:
+ name: Environment
+ entities:
+ - sun.sun
+ - sensor.weather_symbol
+ - sensor.weather_cloudiness
+ - sensor.weather_dewpoint_temperature
+ - sensor.weather_high_clouds
+ - sensor.weather_humidity
+ - sensor.weather_low_clouds
+ - sensor.weather_medium_clouds
+ - sensor.weather_precipitation
+ - sensor.weather_temperature
+ - sensor.weather_wind_speed
+ 
+ 
+old_house:
+ name: Old House
+ entities:
+ - light.bedroom_light
+ - light.upstairs_corridor_light

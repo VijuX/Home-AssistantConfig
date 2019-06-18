@@ -1,0 +1,128 @@
+################################################################################
+# Auto lights off
+################################################################################
+
+- id: '1560454721795'
+  alias: Auto off kitchen
+  trigger:
+  - entity_id: group.kitchen
+    from: 'off'
+    platform: state
+    to: 'on'
+  action:
+  - delay: 00:{{ states.input_number.kitchen_slider.state | int }}:00
+  - data:
+      entity_id: group.kitchen
+    service: light.turn_off
+
+- id: '1560454721796'
+  alias: Auto off Garage
+  trigger:
+  - entity_id: group.garage
+    from: 'off'
+    platform: state
+    to: 'on'
+  action:
+  - delay: 00:{{ states.input_number.garage_slider.state | int }}:00
+  - data:
+      entity_id: group.garage
+    service: light.turn_off
+
+- id: '1560454721797'
+  alias: Auto off Bathroom
+  trigger:
+  - entity_id: group.bathroom
+    from: 'off'
+    platform: state
+    to: 'on'
+  action:
+  - delay: 00:{{ states.input_number.bathroom_slider.state | int }}:00
+  - service: light.turn_off
+    data:
+      entity_id: group.bathroom
+
+- id: '1560454721798'
+  alias: Auto off Guestroom
+  trigger:
+  - entity_id: group.guest_room
+    from: 'off'
+    platform: state
+    to: 'on'
+  action:
+  - delay: '00:{{ states.input_number.guestroom_slider.state | int }}:00'
+  - data:
+      entity_id: group.guest_room
+    service: light.turn_off
+
+- id: '1560454721799'
+  alias: Auto off Masterbedroom
+  trigger:
+  - entity_id: group.master_bedroom
+    from: 'off'
+    platform: state
+    to: 'on'
+  action:
+  - delay: 00:{{ states.input_number.masterbedroom_slider.state | int }}:00
+  - data:
+      entity_id: light.master_bedroom_light_2, light.master_bedroom_light_3
+    service: light.turn_off
+
+
+- id: '1560801822352'
+  alias: Auto off Livingroom
+  trigger:
+  - entity_id: group.living_room
+    from: 'off'
+    platform: state
+    to: 'on'
+  action:
+  - delay: 00:{{ states.input_number.livingroom_slider.state | int }}:00
+  - data:
+      entity_id: group.living_room
+    service: light.turn_off
+
+
+- id: '1560801822353'
+  alias: Auto off Old house
+  trigger:
+  - entity_id: group.old_house
+    from: 'off'
+    platform: state
+    to: 'on'
+  action:
+  - delay: 00:{{ states.input_number.oldhouse_slider.state | int }}:00
+  - data:
+      entity_id: group.old_house
+    service: light.turn_off
+
+
+- id: '1560801822354'
+  alias: Auto off Front door light
+  trigger:
+  - entity_id: light.front_door_light
+    from: 'off'
+    platform: state
+    to: 'on'
+  action:
+  - delay: 00:{{ states.input_number.frontdoor_timeout_slider.state | int }}:00
+  - data:
+      entity_id: light.front_door_light
+    service: light.turn_off
+
+
+
+################################################################################
+# Auto lights on
+################################################################################
+
+- id: '1560801822351'
+  alias: Turn Lights On at Sunset
+  trigger:
+  - event: sunset
+    offset: -00:05
+    platform: sun
+  condition: []
+  action:
+  - data:
+      entity_id: group.living_room
+    service: light.turn_on

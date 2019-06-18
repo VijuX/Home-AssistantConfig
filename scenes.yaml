@@ -1,0 +1,22 @@
+- name: Kitchen normal
+  entities:
+    light.Kitchen_light_1: 
+      state: on
+      brightness_pct: 80
+    light.Kitchen_light_2:
+      state: on
+      brightness_pct: 80
+
+- name: Kitchen dim
+  entities:
+    light.Kitchen_light_1: 
+      state: on
+      brightness_pct: 10
+    light.Kitchen_light_2:
+      state: on
+      brightness_pct: 10
+
+- name: Lights off
+  entities:
+    group.all_lights:
+      state: off

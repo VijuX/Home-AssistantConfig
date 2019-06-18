@@ -1,0 +1,30 @@
+- platform: yr
+
+# Zoneminder
+#- platform: zoneminder
+#  include_archived: false
+#  monitored_conditions: hour
+
+# Weather prediction
+- platform: yr
+  name: Weather
+  monitored_conditions:
+    - temperature
+    - symbol
+    - precipitation
+    - windSpeed
+    - humidity
+    - cloudiness
+    - lowClouds
+    - mediumClouds
+    - highClouds
+    - dewpointTemperature
+
+# System monitor
+- platform: systemmonitor
+  resources:
+    - type: disk_use_percent
+      arg: /
+    - type: memory_free
+    - type: processor_use
+    - type: last_boot

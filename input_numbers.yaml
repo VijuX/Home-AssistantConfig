@@ -1,0 +1,55 @@
+kitchen_slider:
+  name: "Kitchen timeout"
+  initial: 120
+  min: 5
+  max: 120
+  step: 5
+
+garage_slider:
+  name: "Garage timeout"
+  initial: 20
+  min: 5
+  max: 120
+  step: 5
+
+guestroom_slider:
+  name: "Guest room timeout"
+  initial: 20
+  min: 5
+  max: 120
+  step: 5
+
+bathroom_slider:
+  name: "Bathroom timeout"
+  initial: 30
+  min: 5
+  max: 120
+  step: 5    
+
+masterbedroom_slider:
+  name: "Masterbedroom timeout"
+  initial: 10
+  min: 5
+  max: 120
+  step: 5
+
+livingroom_slider:
+  name: "Living room timeout"
+  initial: 120
+  min: 5
+  max: 120
+  step: 5
+
+frontdoor_timeout_slider:
+  name: "Front door timeout"
+  initial: 10
+  min: 5
+  max: 120
+  step: 5  
+
+oldhouse_slider:
+  name: "Old house timeout"
+  initial: 10
+  min: 5
+  max: 120
+  step: 5
