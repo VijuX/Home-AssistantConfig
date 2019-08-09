@@ -96,6 +96,12 @@ media_player:
     scan_interval: 10
     name: "Living room TV"
     mac: !secret samsungtv_mac
+
+#  - platform: plex
+#    ip_address: 192.168.100.10
+#    port: 32400
+#    token: null
+
     
 # Zoneminder
 #zoneminder:
@@ -108,6 +114,13 @@ alexa_media:
     password: !secret amazon_password
     url: amazon.com
 
+
+recorder:
+  purge_keep_days: 2
+  include:
+    domains:
+      - sensor
+
     
 device_tracker:
   - platform: nmap_tracker
@@ -115,7 +128,7 @@ device_tracker:
     interval_seconds: 30
     consider_home: 0:10:00
     scan_options: " --privileged -sP "
-  - platform: gpslogger
+
 
 # Telegram BOT
 telegram_bot:
