@@ -2,11 +2,11 @@
   alias: Auto off kitchen
   trigger:
   - entity_id: group.kitchen
+    for: 00:{{ states.input_number.kitchen_slider.state | int }}:00
     from: 'off'
     platform: state
     to: 'on'
   action:
-  - delay: 00:{{ states.input_number.kitchen_slider.state | int }}:00
   - data:
       entity_id: group.kitchen
     service: light.turn_off
@@ -14,11 +14,11 @@
   alias: Auto off Garage
   trigger:
   - entity_id: group.garage
+    for: 00:{{ states.input_number.garage_slider.state | int }}:00
     from: 'off'
     platform: state
     to: 'on'
   action:
-  - delay: 00:{{ states.input_number.garage_slider.state | int }}:00
   - data:
       entity_id: group.garage
     service: light.turn_off
@@ -26,23 +26,23 @@
   alias: Auto off Bathroom
   trigger:
   - entity_id: group.bathroom
+    for: 00:{{ states.input_number.bathroom_slider.state | int }}:00
     from: 'off'
     platform: state
     to: 'on'
   action:
-  - delay: 00:{{ states.input_number.bathroom_slider.state | int }}:00
-  - service: light.turn_off
-    data:
+  - data:
       entity_id: group.bathroom
+    service: light.turn_off
 - id: '1560454721798'
   alias: Auto off Guestroom
   trigger:
   - entity_id: group.guest_room
+    for: 00:{{ states.input_number.guestroom_slider.state | int }}:00
     from: 'off'
     platform: state
     to: 'on'
   action:
-  - delay: 00:{{ states.input_number.guestroom_slider.state | int }}:00
   - data:
       entity_id: group.guest_room
     service: light.turn_off
@@ -50,11 +50,11 @@
   alias: Auto off Masterbedroom
   trigger:
   - entity_id: group.master_bedroom
+    for: 00:{{ states.input_number.masterbedroom_slider.state | int }}:00
     from: 'off'
     platform: state
     to: 'on'
   action:
-  - delay: 00:{{ states.input_number.masterbedroom_slider.state | int }}:00
   - data:
       entity_id: light.master_bedroom_light_2, light.master_bedroom_light_3
     service: light.turn_off
@@ -62,11 +62,11 @@
   alias: Auto off Livingroom
   trigger:
   - entity_id: group.living_room
+    for: 00:{{ states.input_number.livingroom_slider.state | int }}:00
     from: 'off'
     platform: state
     to: 'on'
   action:
-  - delay: 00:{{ states.input_number.livingroom_slider.state | int }}:00
   - data:
       entity_id: group.living_room
     service: light.turn_off
@@ -74,11 +74,11 @@
   alias: Auto off Old house
   trigger:
   - entity_id: group.old_house
+    for: 00:{{ states.input_number.oldhouse_slider.state | int }}:00
     from: 'off'
     platform: state
     to: 'on'
   action:
-  - delay: 00:{{ states.input_number.oldhouse_slider.state | int }}:00
   - data:
       entity_id: group.old_house
     service: light.turn_off
@@ -86,11 +86,11 @@
   alias: Auto off Front door light
   trigger:
   - entity_id: light.front_door_light
+    for: 00:{{ states.input_number.frontdoor_timeout_slider.state | int }}:00
     from: 'off'
     platform: state
     to: 'on'
   action:
-  - delay: 00:{{ states.input_number.frontdoor_timeout_slider.state | int }}:00
   - data:
       entity_id: light.front_door_light
     service: light.turn_off
@@ -117,20 +117,6 @@
   - data:
       entity_id: light.bedroom_light
     service: light.turn_off
-- id: '1564240112472'
-  alias: Auto bathroom turn on
-  trigger:
-  - entity_id: binary_sensor.staircase_motion
-    from: 'off'
-    platform: state
-    to: 'on'
-  condition:
-  - after: sunset
-    condition: sun
-  action:
-  - data:
-      entity_id: light.upstairs_bathroom
-    service: light.turn_on
 - id: '1564341758528'
   alias: Sunset notification
   trigger:
@@ -144,3 +130,73 @@
       entity_id: media_player.kitchen_echo_dot_2
       message: Sun has set down!
     service: media_player.alexa_tts
+- id: '1567925489580'
+  alias: Water pump timeout
+  trigger:
+  - entity_id: switch.water_pump
+    for: 00:90:00
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - data:
+      entity_id: switch.water_pump
+    service: switch.turn_off
+  - data:
+      data:
+        method: all
+        type: announce
+      message: I switched off the water pump!
+    service: notify.alexa_media_everywhere
+- id: '1567925704060'
+  alias: Water pump activate
+  trigger:
+  - at: 07:00:00
+    platform: time
+  - at: '18:11:00'
+    platform: time
+  condition: []
+  action:
+  - data:
+      data:
+        method: all
+        type: announce
+      message: Turning on water pump
+    service: notify.alexa_media_everywhere
+  - data:
+      entity_id: switch.water_pump
+    service: switch.turn_on
+- id: '1569067641476'
+  alias: Turn garage lights on motion
+  trigger:
+  - entity_id: binary_sensor.garage_motion
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition:
+  - after: sunset
+    before: sunrise
+    condition: sun
+  action:
+  - data:
+      entity_id: ' light.garage_lights'
+    service: light.turn_on
+  - data:
+      data:
+        method: all
+        type: announce
+      message: Motion was detected in garage, turning on the lights.
+    service: notify.alexa_media_everywhere
+- id: '1569068313895'
+  alias: Turn on bathroom lights on motion
+  trigger:
+  - entity_id: binary_sensor.bathroom_motion
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - data:
+      entity_id: light.upstairs_bathroom
+    service: light.turn_on

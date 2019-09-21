@@ -25,18 +25,18 @@
 #   retain: true
 
 
-#- platform: mqtt
-#  name: "Centralite button 1"
-#  state_topic: "smartthings/Centralite Zigbee Smart Switch"
-#  command_topic: "smartthings/Centralite Zigbee Smart Switch"
-#  payload_on: "button 1 pushed"
-#  payload_off: ""
+- platform: mqtt
+  name: "Centralite button 1"
+  state_topic: "smartthings/Centralite Zigbee Smart Switch"
+  command_topic: "smartthings/Centralite Zigbee Smart Switch"
+  payload_on: "button 1 pushed"
+  payload_off: ""
   
-#- platform: mqtt
-#  name: "Centralite button 2"
-#  state_topic: "smartthings/Centralite Zigbee Smart Switch"
-#  command_topic: "smartthings/Centralite Zigbee Smart Switch"
-#  payload_on: "button 2 pushed"
-#  payload_off: ""
+- platform: mqtt
+  name: "Centralite button 2"
+  state_topic: "smartthings/Centralite Zigbee Smart Switch"
+  command_topic: "smartthings/Centralite Zigbee Smart Switch"
+  payload_on: "button 2 pushed"
+  payload_off: ""
   
  

@@ -22,3 +22,15 @@
   state_topic: "dash/doorbell"
   payload_on: "active"
   payload_off: "inactive"
+
+- platform: mqtt
+  name: "Garage motion"
+  state_topic: "smartthings/Garage motion/motion"
+  payload_on: "active"
+  payload_off: "inactive"
+
+- platform: mqtt
+  name: "Bathroom motion"
+  state_topic: "smartthings/Bathroom motion/motion"
+  payload_on: "active"
+  payload_off: "inactive"
